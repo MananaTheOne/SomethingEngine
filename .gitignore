@@ -1,3 +1,4 @@
 nicetexture.bmp
 include/SDL2
 build/*
+lib
