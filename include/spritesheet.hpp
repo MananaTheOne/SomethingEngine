@@ -9,6 +9,7 @@
 class Spritesheet {
   public:
     SDL_Surface* fromRect(SDL_Rect rect);
+    void appendSprite(SDL_Rect rect, int id);
     Spritesheet(ISurface* sheet);
     ~Spritesheet();
   

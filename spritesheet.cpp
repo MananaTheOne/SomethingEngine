@@ -16,3 +16,7 @@ SDL_Surface* Spritesheet::fromRect(SDL_Rect rect) {
   m_sheet->SDLBlitTo(surf, -rect.x, -rect.y);
   return surf;
 }
+
+void Spritesheet::appendSprite(SDL_Rect rect, int id) {
+  
+}
