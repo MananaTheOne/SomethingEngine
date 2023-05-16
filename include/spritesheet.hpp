@@ -1,0 +1,17 @@
+#pragma once
+
+#include<SDL2/SDL.h>
+#include<isurface.hpp>
+
+/**
+ * Basic spritesheet class.
+*/
+class Spritesheet {
+  public:
+    SDL_Surface* fromRect(SDL_Rect rect);
+    Spritesheet(ISurface* sheet);
+    ~Spritesheet();
+  
+  private:
+    ISurface* m_sheet;
+};
