@@ -1,1 +1,3 @@
-indclude/SDL2
+nicetexture.bmp
+include/SDL2
+build/*
