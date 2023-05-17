@@ -9,10 +9,11 @@
 class Spritesheet {
   public:
     SDL_Surface* fromRect(SDL_Rect rect);
-    void appendSprite(SDL_Rect rect, int id);
+    void appendSprite(SDL_Rect rect[], int id[]);
     Spritesheet(ISurface* sheet);
     ~Spritesheet();
   
   private:
     ISurface* m_sheet;
+    SDL_Surface* m_sprites[];
 };

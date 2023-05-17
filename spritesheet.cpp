@@ -17,6 +17,11 @@ SDL_Surface* Spritesheet::fromRect(SDL_Rect rect) {
   return surf;
 }
 
-void Spritesheet::appendSprite(SDL_Rect rect, int id) {
-  
+void Spritesheet::appendSprites(SDL_Rect rect[], int id[]) {
+  int len = sizeof(id)/sizeof(int);
+  SDL_Surface* m_sprites[len];
+
+  for (int i=0; i<len; i++) {
+    m_sprites[i] = fromRect(rect[i]);
+  }
 }
