@@ -35,6 +35,15 @@ class ISurface {
     void SDLBlitTo(SDL_Surface* dest, int x, int y);
 
     /**
+     * Almost works the same way as SDL_BlitSurface
+     * 
+     * @param dest The surface to blit to
+     * @param x    Offset for the x-axis
+     * @param y    Offset for the y-axis
+    */
+    void _UpperBlit(SDL_Surface* dest, SDL_Rect* src_rect, SDL_Rect* dest_rect);
+
+    /**
      * ISurface ctor for already-existing surfaces
      * 
      * @param surf Surface to copy from

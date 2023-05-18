@@ -35,3 +35,7 @@ void ISurface::Blit(ISurface src, int x, int y) {
   rect.x = x; rect.y = y;
   SDL_UpperBlit(src.m_surf, NULL, m_surf, &rect);
 }
+
+void ISurface::_UpperBlit(SDL_Surface* dest, SDL_Rect* src_rect, SDL_Rect* dest_rect) {
+  SDL_UpperBlit(m_surf, src_rect, dest, dest_rect);
+}

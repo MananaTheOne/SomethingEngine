@@ -27,6 +27,12 @@ void quit() {
 int main(int argc, char* argv[]) {
   SDL_Event ev;
   ISurface test_surf("nicetexture.bmp");
+  Spritesheet spritesheet(&test_surf);
+
+  SDL_Rect penasrect;
+    penasrect.x=penasrect.y=32;
+    penasrect.w=penasrect.h=32;
+  SDL_Surface* penas = spritesheet.fromRect(penasrect);
 
   if ( init() ) { return -1; }
 
@@ -40,9 +46,17 @@ int main(int argc, char* argv[]) {
           run = false;
       }
     }
-    test_surf.SDLBlitTo(winSurf, 0, 0);
+    // test_surf.SDLBlitTo(winSurf, 0, 0);
+    SDL_BlitSurface(penas, NULL, winSurf, NULL);
     SDL_UpdateWindowSurface(window);
   }
+  // test_surf.~ISurface()
+  // No need for this ^ code right here.
+
+  // When using Spritesheet class' constructor you have to pass the pointer of the
+  // ISurface object meaning that when you call the deconstructor, it also deconstructs
+  // what you have passed in the Spritesheet ctor.
+  spritesheet.~Spritesheet();
   quit();
   return 0;
 }

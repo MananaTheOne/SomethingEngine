@@ -9,6 +9,7 @@ Spritesheet::Spritesheet(ISurface* sheet) {
 
 Spritesheet::~Spritesheet() { 
   m_sheet->~ISurface();
+
 }
 
 SDL_Surface* Spritesheet::fromRect(SDL_Rect rect) {
@@ -17,11 +18,8 @@ SDL_Surface* Spritesheet::fromRect(SDL_Rect rect) {
   return surf;
 }
 
-void Spritesheet::appendSprites(SDL_Rect rect[], int id[]) {
-  int len = sizeof(id)/sizeof(int);
-  SDL_Surface* m_sprites[len];
-
-  for (int i=0; i<len; i++) {
-    m_sprites[i] = fromRect(rect[i]);
-  }
+void Spritesheet::ezBlit(SDL_Rect rect, SDL_Surface* dest, int x, int y) {
+  SDL_Rect _rect = rect;
+    _rect.x = -x; _rect.y = -y;
+  m_sheet->_UpperBlit(dest, &rect, &_rect);
 }
