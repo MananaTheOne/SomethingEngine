@@ -9,7 +9,6 @@ Spritesheet::Spritesheet(ISurface* sheet) {
 
 Spritesheet::~Spritesheet() { 
   m_sheet->~ISurface();
-
 }
 
 SDL_Surface* Spritesheet::fromRect(SDL_Rect rect) {
