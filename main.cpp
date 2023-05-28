@@ -1,4 +1,4 @@
-#include<spritesheet.hpp>
+// #include<spritesheet.hpp>
 #include<isurface.hpp>
 #include<SDL2/SDL.h>
 #include<iostream>
@@ -10,7 +10,7 @@ SDL_Surface* winSurf;
 int init() {
   if ( SDL_Init(SDL_INIT_VIDEO) < 0 ) {
     std::cout << "SDL2 cannot be initialized.. Error:" << SDL_GetError() << "\n"; return -1; }
-  window = SDL_CreateWindow("SomethingEngine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+  window = SDL_CreateWindow("Phobos ", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
     256, 192, 0
   ); if ( !window ) {
     std::cout << "Window cannot be created.. Error:" << SDL_GetError() << "\n"; return -1; 
@@ -29,6 +29,8 @@ int main(int argc, char* argv[]) {
 
   init();
 
+  ISurface test("nicetexture.bmp");
+
   bool run = true;
   while (run) {
     while (SDL_PollEvent(&ev)) {
@@ -42,6 +44,7 @@ int main(int argc, char* argv[]) {
       }
     }
     SDL_FillRect(winSurf, NULL, 0xffffffff);
+    test.SDLBlitTo(winSurf, 0, 0);
     SDL_UpdateWindowSurface(window);
   }
 

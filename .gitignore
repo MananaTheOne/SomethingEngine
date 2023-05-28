@@ -1,5 +1,7 @@
 phobos idea.png
 nicetexture.bmp
 include/SDL2
+release.bat
+debug.bat
 build/*
 lib

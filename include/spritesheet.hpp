@@ -1,5 +1,6 @@
 #pragma once
 
+#include<vector>
 #include<SDL2/SDL.h>
 #include<isurface.hpp>
 
@@ -14,6 +15,13 @@ class Spritesheet {
      * @param rect Rect of the sprite
     */
     SDL_Surface* fromRect(SDL_Rect rect);
+
+    /**
+     * Get sprite from a vector of sprites
+     * 
+     * @param index Index of the sprite
+    */
+    ISurface* fromIndex(int index);
 
     /**
      * Blit directly without saving any Surfaces to memory.
@@ -39,4 +47,5 @@ class Spritesheet {
   
   private:
     ISurface* m_sheet;
+    std::vector<ISurface> m_sprites;
 };

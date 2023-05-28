@@ -1,3 +1,4 @@
+#include<vector>
 #include<SDL2/SDL.h>
 #include<isurface.hpp>
 #include<spritesheet.hpp>
@@ -9,6 +10,10 @@ Spritesheet::Spritesheet(ISurface* sheet) {
 
 Spritesheet::~Spritesheet() { 
   m_sheet->~ISurface();
+}
+
+ISurface* Spritesheet::fromIndex(int index) {
+  return &m_sprites[index];
 }
 
 SDL_Surface* Spritesheet::fromRect(SDL_Rect rect) {
