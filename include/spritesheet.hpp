@@ -50,6 +50,13 @@ class Spritesheet {
     Spritesheet(ISurface* sheet);
 
     /**
+     * Spritesheet constructor overlaod
+     * 
+     * @param path Path of the image
+    */
+    Spritesheet(const char* path);
+
+    /**
      * Spritesheet deconstructor
     */
     ~Spritesheet();

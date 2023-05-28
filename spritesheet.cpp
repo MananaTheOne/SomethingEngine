@@ -4,12 +4,19 @@
 #include<spritesheet.hpp>
 
 
+Spritesheet::Spritesheet(const char* path) {
+  ISurface* surf = new ISurface(path);
+  m_sheet = surf;
+  m_sprites = std::vector<ISurface>();
+}
+
 Spritesheet::Spritesheet(ISurface* sheet) {
   m_sheet = sheet;
+  m_sprites = std::vector<ISurface>();
 }
 
 Spritesheet::~Spritesheet() { 
-  m_sheet->~ISurface();
+  delete m_sheet;
 }
 
 ISurface* Spritesheet::fromIndex(Uint32 index) {

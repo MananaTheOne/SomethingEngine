@@ -21,7 +21,7 @@ class Sprite {
      * 
      * @param dest Where to render the sprtie to.
     */
-    void render(ISurface* dest);
+    void render(SDL_Surface* dest);
 
     /**
      * Change the texture index to be used on the sprite.

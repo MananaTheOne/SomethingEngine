@@ -1,4 +1,5 @@
 #include<isurface.hpp>
+#include<iostream>
 
 
 ISurface::ISurface(SDL_Surface* surf) {
@@ -9,12 +10,19 @@ ISurface::ISurface(SDL_Surface* surf) {
 
 ISurface::ISurface(const char* path) {
   m_surf = SDL_LoadBMP(path);
-  m_rect.x = m_rect.y = 0;
-  m_rect.w = m_surf->w; m_rect.h = m_surf->h;
+  if (m_surf == nullptr) {
+    std::cout << "Okay so uhm.. Some weird bullshit happened. (File was not accessed correctly)\n";
+  } else {
+    m_rect.x = m_rect.y = 0;
+    m_rect.w = m_surf->w;
+    m_rect.h = m_surf->h;
+  }
 }
 
 ISurface::~ISurface() {
-  SDL_FreeSurface(m_surf);
+  if (m_surf != nullptr) {
+    SDL_FreeSurface(m_surf);
+  }
 }
 
 void ISurface::SDLBlit(SDL_Surface* src, int x, int y) {
