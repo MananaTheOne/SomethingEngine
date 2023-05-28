@@ -30,10 +30,10 @@ void ISurface::SDLBlitTo(SDL_Surface* dest, int x, int y) {
   SDL_UpperBlit(m_surf, NULL, dest, &rect);
 }
 
-void ISurface::Blit(ISurface src, int x, int y) {
-  SDL_Rect rect = src.m_rect;
+void ISurface::Blit(ISurface* src, int x, int y) {
+  SDL_Rect rect = src->m_rect;
   rect.x = x; rect.y = y;
-  SDL_UpperBlit(src.m_surf, NULL, m_surf, &rect);
+  SDL_UpperBlit(src->m_surf, NULL, m_surf, &rect);
 }
 
 void ISurface::_UpperBlit(SDL_Surface* dest, SDL_Rect* src_rect, SDL_Rect* dest_rect) {

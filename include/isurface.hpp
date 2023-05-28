@@ -14,7 +14,7 @@ class ISurface {
      * @param x   Offset for the x-axis
      * @param y   Offset for the y-axis
     */
-    void Blit(ISurface src, int x, int y);
+    void Blit(ISurface* src, int x, int y);
 
     /**
      * Blit an SDL_Surface to the ISurface.

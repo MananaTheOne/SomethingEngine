@@ -7,6 +7,13 @@ Sprite::Sprite(Spritesheet* sheet) {
   m_sheet = sheet;
 }
 
-Sprite::render(ISurface* dest) {
-  
+void Sprite::setTexture(Uint32 index) {
+  m_current_tex = index;
+}
+
+void Sprite::render(ISurface* dest) {
+  dest->Blit(
+    m_sheet->fromIndex(m_current_tex),
+    m_pos_x, m_pos_y
+  );
 }

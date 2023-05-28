@@ -20,8 +20,17 @@ class Spritesheet {
      * Get sprite from a vector of sprites
      * 
      * @param index Index of the sprite
+     * @return pointer to an ISurface, NULL if the index does not exist.
     */
-    ISurface* fromIndex(int index);
+    ISurface* fromIndex(Uint32 index);
+
+    /**
+     * Create a new index for sprite
+     * 
+     * @param rect Rect of the sprite
+     * @return Index of the new sprite
+    */
+    int newSprite(SDL_Rect rect);
 
     /**
      * Blit directly without saving any Surfaces to memory.
