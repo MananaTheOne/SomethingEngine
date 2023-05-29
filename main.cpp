@@ -25,6 +25,7 @@ int init() {
 }
 
 void quit() {
+  std::cout << std::endl;
   SDL_DestroyWindow(window);
   SDL_Quit();
 }
@@ -50,6 +51,11 @@ int main(int argc, char* argv[]) {
       switch (ev.type) {
         case SDL_QUIT:
           run = false;
+          break;
+
+        case SDL_MOUSEMOTION:
+          emoji.m_pos_x = ev.motion.x;
+          emoji.m_pos_y = ev.motion.y;
           break;
 
         default:

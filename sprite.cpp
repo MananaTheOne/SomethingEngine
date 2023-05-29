@@ -3,6 +3,7 @@
 #include<spritesheet.hpp>
 #include<sprite.hpp>
 
+
 Sprite::Sprite(Spritesheet* sheet) {
   m_sheet = sheet;
   m_current_tex = 0;
