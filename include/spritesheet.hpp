@@ -14,7 +14,7 @@
 class Spritesheet {
 public:
     /**
-     * @brief Crop the sprite from the spritesheet using the provided rectangle.
+     * @brief Get the surface of a given area in the spritesheet.
      *
      * @param rect The rectangle defining the area of the sprite in the spritesheet.
      * @return Pointer to the cropped SDL_Surface representing the sprite.
@@ -36,6 +36,14 @@ public:
      * @return The index of the newly created sprite.
      */
     int newSprite(SDL_Rect rect);
+
+    /**
+     * @brief Create a new sprite index for a given surface.
+     *
+     * @param surf The surface for the new sprite.
+     * @return The index of the newly created sprite.
+     */
+    int newSprite(SDL_Surface* surf);
 
     /**
      * @brief Blit a sprite directly without saving any surfaces to memory.

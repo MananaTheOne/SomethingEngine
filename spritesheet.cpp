@@ -35,6 +35,12 @@ int Spritesheet::newSprite(SDL_Rect rect) {
   return m_sprites.size() - 1;
 }
 
+int Spritesheet::newSprite(SDL_Surface* surf) {
+  ISurface isurf(surf);
+  m_sprites.emplace_back(isurf);
+  return m_sprites.size() - 1;
+}
+
 void Spritesheet::ezBlit(SDL_Rect rect, SDL_Surface* dest, int x, int y) {
   SDL_Rect _rect = rect;
     _rect.x = -x; _rect.y = -y;
