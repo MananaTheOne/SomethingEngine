@@ -4,5 +4,6 @@ emoticon.bmp
 include/SDL2
 release.bat
 debug.bat
-build/*
+TODO.md
+build
 lib
