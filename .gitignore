@@ -4,6 +4,7 @@ emoticon.bmp
 include/SDL2
 release.bat
 debug.bat
+main.cpp
 TODO.md
 build
 lib

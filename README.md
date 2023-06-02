@@ -1,7 +1,9 @@
 # SomethingEngine
-> a shitty engine made with SDL2
 
-## What is this?
-idfk lol
+## Complete with:
+  - Tile system
+  - Spritesheet
+  - Sprites/Entities
+  - ISurface
 
-### asdasdasdadsddsd
+very bad pls dont use this lol just make ur own or use other game engines lmao.
